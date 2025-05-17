@@ -6,11 +6,11 @@
         <FormItem label="Name">
           <Input v-model="form.name" />
         </FormItem>
-        <FormItem label="Description">
-          <Input v-model="form.description" />
-        </FormItem>
         <FormItem label="Brand">
           <Input v-model="form.brand" />
+        </FormItem>
+        <FormItem label="Description">
+          <Input v-model="form.description" />
         </FormItem>
         <FormItem label="Price">
           <Input v-model="form.price" type="number" />
@@ -55,9 +55,9 @@ export default {
       columns: [
         { title: 'Name', key: 'name' },
         { title: 'Brand', key: 'brand' },
-        { title: 'Stock', key: 'quantity' },
         { title: 'Description', key: 'description' },
         { title: 'Price', key: 'price' },
+        { title: 'Stock', key: 'quantity' },
         //{ title: 'Total', key: 'quantity'},
         {
           title: 'Action',

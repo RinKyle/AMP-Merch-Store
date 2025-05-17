@@ -1,6 +1,16 @@
 <template>
   <div>
-    <Card title="User Management" style="margin: 20px">
+    <!-- About Info Section -->
+    <Card title="About AMP MERCH STORE" style="margin: 20px">
+      <p>
+        Welcome to AMP MERCH STORE — your one-stop destination for exclusive apparel, accessories, 
+        and custom merchandise designed for fans and creators. Manage your users below to keep 
+        your store community growing strong.
+      </p>
+    </Card>
+
+    <!-- User Management Section -->
+    <!-- <Card title="User Management" style="margin: 20px">
       <Button type="primary" icon="md-add" @click="showAddModal">Add User</Button>
       <Table :columns="columns" :data="users" style="margin-top: 20px" border />
 
@@ -14,11 +24,11 @@
           </FormItem>
         </Form>
       </Modal>
-    </Card>
+    </Card> -->
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   name: "UserCrud",
   data() {
@@ -112,7 +122,7 @@ export default {
     },
   },
 };
-</script>
+</script> -->
 
 <style scoped>
 </style>
