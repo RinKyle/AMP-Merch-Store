@@ -82,7 +82,7 @@
             <Layout>
                 <Header :style="{padding: 0}" class="layout-header-bar">
                     <Icon @click="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
-                    <b>AMP Merch Store</b>
+                    <b>AMP Merch Store.</b>
                 </Header>
                 <Content :style="{margin: '20px', background: '#fff', minHeight: '260px', overflowY: 'auto'}">
                     <RouterView></RouterView>
