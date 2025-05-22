@@ -8,13 +8,8 @@
 
       <Table :columns="columns" :data="inventory" stripe border />
 
-      <Modal
-        v-model="modalVisible"
-        :title="isEditing ? 'Edit Item' : 'Add Item'"
-        @on-ok="submitForm"
-        :loading="formSubmitting"
-        ok-text="Save"
-      >
+      <Modal v-model="modalVisible" :title="isEditing ? 'Edit Item' : 'Add Item'" @on-ok="submitForm"
+        :loading="formSubmitting" ok-text="Save">
         <Form ref="formRef" :model="formData" :rules="rules" label-position="top">
           <FormItem label="Name" prop="name">
             <Input v-model="formData.name" placeholder="Item name" />
@@ -129,7 +124,15 @@ export default {
 
 <style scoped>
 .inventory-crud {
-  padding: 24px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: LightBlue;
+  /* Same background as before */
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .ivu-card-head .ivu-btn {

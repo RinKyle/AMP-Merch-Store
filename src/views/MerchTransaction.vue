@@ -24,24 +24,24 @@
           </div>
         </FormItem>
 
-        <FormItem label="Merch Name" prop="customerName">
+        <!-- <FormItem label="Merch Name" prop="customerName">
           <Input v-model="form.customerName" placeholder="Enter merch name" />
-        </FormItem>
+        </FormItem> -->
 
-        <FormItem label="Note">
-          <Input v-model="form.note" type="textarea" placeholder="Optional note" />
+        <FormItem label="Price">
+          <span> {{ form.price }}</span>
         </FormItem>
 
         <FormItem label="Quantity" prop="quantity">
           <InputNumber v-model="form.quantity" :min="1" :max="selectedProduct.quantity" :disabled="!form.productId" />
         </FormItem>
 
-        <FormItem label="Price">
-          <span> {{ form.price }}</span>
-        </FormItem>
-
         <FormItem label="Total">
           <b> ₱ {{ form.price * form.quantity }}</b>
+        </FormItem>
+
+        <FormItem label="Note">
+          <Input v-model="form.note" type="textarea" placeholder="Optional note" />
         </FormItem>
 
         <FormItem>
@@ -94,21 +94,22 @@ export default {
       search: '',
       transactions: [],
       productColumns: [
-        { title: 'Name', key: 'name' },
+        { title: 'Merch Type', key: 'name' },
         { title: 'Brand', key: 'brand' },
+        { title: 'Description', key: 'description' },
         { title: 'Price', key: 'price' },
         { title: 'Available Quantity', key: 'quantity' },
       ],
       transactionColumns: [
-        { title: 'Customer', key: 'customerName' },
-        { title: 'Name', key: 'name' },
-        { title: 'Note', key: 'note' },
-        { title: 'Quantity', key: 'quantity' },
+        // { title: 'Customer', key: 'customerName' },
+        { title: 'Merch Type', key: 'name' },
         { title: 'Price', key: 'price' },
+        { title: 'Quantity', key: 'quantity' },
         {
           title: 'Total',
           render: (h, { row }) => h('span', row.quantity * row.price),
         },
+        { title: 'Note', key: 'note' },
       ],
     }
   },
@@ -215,20 +216,27 @@ export default {
 
 <style scoped>
 .transaction-wrapper {
-  max-width: 900px;
+  max-width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  background-color: LightBlue;
+  /* ← Light gray-blue background */
+  padding: 15px;
+  /* Optional: add padding to separate content from edges */
+  border-radius: 8px;
+  /* Optional: rounded corners */
 }
+
 
 .transaction-form {
   padding: 20px;
 }
 
 .row-disabled {
-  background-color: #f5f5f5;
-  color: #aaa;
+  background-color: Black;
+  color: Black;
   pointer-events: none;
 }
 </style>

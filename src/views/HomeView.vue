@@ -40,14 +40,15 @@ export default {
       monthlyTotalQuantity: 0,
       monthlyTransactionCount: 0,
       transactionColumns: [
-        { title: 'Merch Type', key: 'name' },
         // { title: 'Book ID', key: 'bookId' },
-        { title: 'Quantity', key: 'quantity' },
+        { title: 'Merch Type', key: 'name' },
         { title: 'Price', key: 'price' },
+        { title: 'Quantity', key: 'quantity' },
         {
           title: 'Total',
           render: (h, { row }) => h('span', row.quantity * row.price),
         },
+        { title: 'Note', key: 'note' },
         {
           title: 'Date',
           render: (h, { row }) => h('span', moment(row.created_at).format('MMM DD, YYYY')),
@@ -96,9 +97,18 @@ export default {
 
 <style scoped>
 .dashboard-wrapper {
-  padding: 24px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: LightBlue;
+  /* Unified soft background */
+  padding: 15px;
+  border-radius: 8px;
 }
 
+/* Grid layout for metric cards */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -106,8 +116,9 @@ export default {
   margin-top: 16px;
 }
 
+/* Unified card style */
 .stat-card {
-  background: #fff;
+  background: White;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
@@ -119,23 +130,20 @@ export default {
   transform: translateY(-5px);
 }
 
-/* .icon {
-  font-size: 24px;
-  margin-bottom: 8px;
-  display: block;
-} */
 .icon {
   font-size: 28px;
   margin-bottom: 6px;
   display: inline-block;
+  color: Green;
 }
 
 .stat-value {
   font-size: 26px;
   font-weight: bold;
-  color: #333;
+  color: Green;
 }
 
+/* Colored borders for stat cards */
 .stat-sales {
   border-left: 4px solid #1890ff;
 }

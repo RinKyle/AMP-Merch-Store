@@ -8,12 +8,8 @@
         </FormItem>
 
         <FormItem label="Password" prop="password">
-          <Input
-            v-model="loginForm.password"
-            type="password"
-            placeholder="Enter your password"
-            @on-enter="handleLogin"
-          />
+          <Input v-model="loginForm.password" type="password" placeholder="Enter your password"
+            @on-enter="handleLogin" />
         </FormItem>
 
         <FormItem>
@@ -65,7 +61,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f0f2f5;
+  background: Black;
 }
 
 .login-card {

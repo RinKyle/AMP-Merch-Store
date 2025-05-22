@@ -3,8 +3,8 @@
     <!-- About Info Section -->
     <Card title="About AMP MERCH STORE" style="margin: 20px">
       <p>
-        Welcome to AMP MERCH STORE — your one-stop destination for exclusive apparel, accessories, 
-        and custom merchandise designed for fans and creators. Manage your users below to keep 
+        Welcome to AMP MERCH STORE — your one-stop destination for exclusive apparel, accessories,
+        and custom merchandise designed for fans and creators. Manage your users below to keep
         your store community growing strong.
       </p>
     </Card>
@@ -124,5 +124,4 @@ export default {
 };
 </script> -->
 
-<style scoped>
-</style>
+<style scoped></style>

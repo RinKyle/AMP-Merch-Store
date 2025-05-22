@@ -2,8 +2,8 @@
   <div class="p-4">
     <Card>
       <h2>Merch Inventory</h2>
-      <Form :model="form" :label-width="80">
-        <FormItem label="Name">
+      <Form :model="form" :label-width="90">
+        <FormItem label="Merch Type">
           <Input v-model="form.name" />
         </FormItem>
         <FormItem label="Brand">
@@ -53,7 +53,7 @@ export default {
       },
       products: [],
       columns: [
-        { title: 'Name', key: 'name' },
+        { title: 'Merch Type', key: 'name' },
         { title: 'Brand', key: 'brand' },
         { title: 'Description', key: 'description' },
         { title: 'Price', key: 'price' },
@@ -80,7 +80,7 @@ export default {
     async saveProduct() {
       if (this.form.id) {
         const { error } = await supabase.from('product').update(this.form).eq('id', this.form.id)
-        console.log({error});
+        console.log({ error });
         if (!error) {
           this.$Message.success('product updated successfully')
           this.fetchProducts()
@@ -90,8 +90,8 @@ export default {
         const form = { ...this.form }
         delete form.id
         const { error } = await supabase.from('product').insert([form])
-        console.log({error});
-        
+        console.log({ error });
+
         if (!error) {
           this.$Message.success('product added successfully')
           this.fetchProducts()
@@ -127,7 +127,23 @@ export default {
 </script>
 
 <style scoped>
+.p-4 {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: LightBlue;
+  /* Match previous components */
+  padding: 15px;
+  border-radius: 8px;
+}
+
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+}
+
+.ivu-btn+.ivu-btn {
+  margin-left: 8px;
 }
 </style>
