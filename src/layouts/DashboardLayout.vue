@@ -2,6 +2,7 @@
 .layout {
     border: 1px solid Black;
     background: Black;
+    background-image: url('/images/Siege.jpg');
     position: relative;
     border-radius: 4px;
     overflow: hidden;
@@ -13,8 +14,17 @@
 
 .layout-header-bar {
     /* This is for the Header */
-    background: White;
+    /* background: Black; */
+    background-image: url('/images/Siege.jpg');
+    background-size: cover;
+    /* Ensures the image covers the entire container */
+    background-position: center;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.layout-header-bar b {
+    color: White;
+    /* Replace 'white' with your desired color */
 }
 
 .layout-logo-left {
@@ -93,7 +103,7 @@
                 <Header :style="{ padding: 0 }" class="layout-header-bar">
                     <Icon @click="collapsedSider" :class="rotateIcon" :style="{ margin: '0 20px' }" type="md-menu"
                         size="24"></Icon>
-                    <b>AMP Merch Store</b>
+                    <b class="gradient-text">AMP Merch Store</b>
                 </Header>
                 <Content :style="{ margin: '20px', background: '#fff', minHeight: '260px', overflowY: 'auto' }">
                     <RouterView></RouterView>

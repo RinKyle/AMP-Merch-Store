@@ -134,6 +134,12 @@ export default {
   flex-direction: column;
   gap: 24px;
   background-color: LightBlue;
+  background-image: url('/images/Siege.jpg');
+  background-size: cover;
+  /* Ensures the image covers the entire container */
+  background-position: center;
+  /* Keeps the image centered */
+  /* background-repeat: no-repeat; */
   /* Match previous components */
   padding: 15px;
   border-radius: 8px;

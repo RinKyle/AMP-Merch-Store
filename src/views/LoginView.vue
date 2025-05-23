@@ -61,7 +61,13 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: Black;
+  background: DarkGray;
+  background-image: url('/images/Siege.jpg');
+  background-size: cover;
+  /* Ensures the image covers the entire container */
+  background-position: center;
+  /* Keeps the image centered */
+  /* background-repeat: no-repeat; */
 }
 
 .login-card {
