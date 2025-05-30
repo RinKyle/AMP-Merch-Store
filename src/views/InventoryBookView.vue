@@ -3,7 +3,7 @@
     <Card>
       <h2>Merch Inventory</h2>
       <Form :model="form" :label-width="90">
-        <FormItem label="Merch Type">
+        <FormItem label="Type">
           <Input v-model="form.name" />
         </FormItem>
         <FormItem label="Brand">
@@ -53,7 +53,7 @@ export default {
       },
       products: [],
       columns: [
-        { title: 'Merch Type', key: 'name' },
+        { title: 'Type', key: 'name' },
         { title: 'Brand', key: 'brand' },
         { title: 'Description', key: 'description' },
         { title: 'Price', key: 'price' },

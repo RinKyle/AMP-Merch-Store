@@ -41,7 +41,7 @@ export default {
       monthlyTransactionCount: 0,
       transactionColumns: [
         // { title: 'Book ID', key: 'bookId' },
-        { title: 'Merch Type', key: 'name' },
+        { title: 'Type', key: 'name' },
         { title: 'Price', key: 'price' },
         { title: 'Quantity', key: 'quantity' },
         {
@@ -62,7 +62,7 @@ export default {
         .from('transaction')
         .select(`*, product(name)`)
         .order('created_at', { ascending: false })
-        .limit(100)
+        .limit(5)
 
       if (!error) {
         this.latestTransactions = data.map(txn => ({

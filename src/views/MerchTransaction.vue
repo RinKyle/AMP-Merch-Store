@@ -24,7 +24,7 @@
           </div>
         </FormItem>
 
-        <!-- <FormItem label="Merch Name" prop="customerName">
+        <!-- <FormItem label="Customer Name" prop="customerName">
           <Input v-model="form.customerName" placeholder="Enter merch name" />
         </FormItem> -->
 
@@ -38,6 +38,10 @@
 
         <FormItem label="Total">
           <b> ₱ {{ form.price * form.quantity }}</b>
+        </FormItem>
+
+        <FormItem label="Customer Name" prop="customerName">
+          <Input v-model="form.customerName" placeholder="Enter merch name" />
         </FormItem>
 
         <FormItem label="Note">
@@ -94,7 +98,7 @@ export default {
       search: '',
       transactions: [],
       productColumns: [
-        { title: 'Merch Type', key: 'name' },
+        { title: 'Type', key: 'name' },
         { title: 'Brand', key: 'brand' },
         { title: 'Description', key: 'description' },
         { title: 'Price', key: 'price' },
@@ -102,13 +106,15 @@ export default {
       ],
       transactionColumns: [
         // { title: 'Customer', key: 'customerName' },
-        { title: 'Merch Type', key: 'name' },
+        { title: 'Type', key: 'name' },
+        // { title: 'Brand', key: 'brand' },
         { title: 'Price', key: 'price' },
         { title: 'Quantity', key: 'quantity' },
         {
           title: 'Total',
           render: (h, { row }) => h('span', row.quantity * row.price),
         },
+        { title: 'Customer Name', key: 'customerName' },
         { title: 'Note', key: 'note' },
       ],
     }
@@ -128,7 +134,7 @@ export default {
         .from('transaction')
         .select(`*, product(name)`)
         .order('id', { ascending: false })
-        .limit(20)
+        .limit(5)
 
       if (!error) {
         this.transactions = data.map(txn => ({

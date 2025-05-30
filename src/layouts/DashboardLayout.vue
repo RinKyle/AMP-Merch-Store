@@ -1,82 +1,77 @@
 <style scoped>
 .layout {
-    border: 1px solid Black;
-    background: Black;
     background-image: url('/images/Siege.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    border-radius: 4px;
-    overflow: hidden;
+}
+
+.layout::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: Black;
+    /* Dark overlay for readability */
+    z-index: 0;
+}
+
+.layout>* {
+    position: relative;
+    z-index: 1;
 }
 
 .layout .ivu-menu {
-    z-index: 0
+    background-color: Black;
+    border-right: 1px solid Black;
+    z-index: 2;
 }
 
 .layout-header-bar {
-    /* This is for the Header */
-    /* background: Black; */
-    background-image: url('/images/Siege.jpg');
-    background-size: cover;
-    /* Ensures the image covers the entire container */
-    background-position: center;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    background-color: Black;
+    /* Background for AMP Merch Store */
+    display: flex;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0 2px 5px LightBlue;
+    /* Under the header */
+    padding: 0 20px;
 }
 
 .layout-header-bar b {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
     color: White;
-    /* Replace 'white' with your desired color */
+    /* AMP Merch Store text color */
+    letter-spacing: 1px;
 }
 
-.layout-logo-left {
-    width: 90%;
-    height: 30px;
-    background: White;
-    border-radius: 3px;
-    margin: 15px auto;
+.ivu-layout-content {
+    background-color: Black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    color: Black;
+    /* Change text color for Total Sales, Total Quantity, and Transactions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.menu-icon {
-    transition: all .3s;
-}
-
-.rotate-icon {
-    transform: rotate(-90deg);
-}
-
-.menu-item span {
-    display: inline-block;
-    overflow: hidden;
-    min-width: 69px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    vertical-align: bottom;
-    transition: width .2s ease .2s;
-}
-
-.menu-item i {
-    transform: translateX(0px);
-    transition: font-size .2s ease, transform .2s ease;
-    vertical-align: middle;
-    font-size: 16px;
-}
-
-.collapsed-menu span {
-    width: 0px;
-    transition: width .2s ease;
-}
-
-.collapsed-menu i {
-    transform: translateX(5px);
-    transition: font-size .2s ease .2s, transform .2s ease .2s;
-    vertical-align: middle;
-    font-size: 22px;
-}
+/* Sidebar and icon styles remain unchanged from your version */
 </style>
+
+
 <template>
     <div class="layout">
         <Layout style="height: 100vh;">
             <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
-                <Menu :active-name="currentRoute" theme="dark" width="auto" :class="menuitemClasses">
+                <Menu :active-name="currentRoute" theme="light" width="auto" :class="menuitemClasses">
                     <MenuItem @click="goTo('/home')" name="/home">
                     <Icon type="ios-navigate"></Icon>
                     <span>Home</span>

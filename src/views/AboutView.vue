@@ -28,7 +28,7 @@
         </p>
       </section>
 
-      <div class="img">
+      <!-- <div class="img">
         <img src="/images/Adidas.jpg">
         <img src="/images/BAPE.jpg">
         <img src="/images/Bench.jpg">
@@ -41,7 +41,7 @@
         <img src="/images/Stussy.jpg">
         <img src="/images/Supreme.jpg">
         <img src="/images/The North Face.jpg">
-      </div>
+      </div> -->
     </Card>
   </div>
 </template>
